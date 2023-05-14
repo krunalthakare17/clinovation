@@ -14,7 +14,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Teko:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -30,12 +32,118 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .slider_center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            margin-bottom: 4rem;
+        }
+
+        .service-slider {
+            overflow: hidden;
+            display: block;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.3s ease-in-out;
+            margin: 1rem;
+        }
+
+        .service-slider-controls {
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            top: 65%;
+            transform: translateY(-50%);
+        }
+
+        .service_prev-icon,
+        .service_next-icon {
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+            font-size: 30px;
+            margin: 0 15px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, .5);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            top: 50%;
+            transform: translateY(-50%);
+            justify-content: center;
+        }
+
+        .service_prev-icon {
+            position: absolute;
+            left: 10px;
+        }
+
+        .service_next-icon {
+            position: absolute;
+            right: 10px;
+        }
+
+        .service_prev-icon:hover,
+        .service_next-icon:hover {
+            background-color: rgb(6, 185, 113);
+        }
+
+        .service_prev-icon:focus,
+        .service_next-icon:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #007bff;
+        }
+
+        @media (min-width: 992px) {
+            .col-lg-4 {
+                flex-basis: 33.33%;
+                max-width: 33.33%;
+                /* margin: 10px; */
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .col-lg-4 {
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .row {
+                margin: 0;
+            }
+
+            .service-item {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status">
+        </div>
         <img class="position-absolute top-50 start-50 translate-middle" src="img/icons/icon-1.png" alt="Icon">
     </div>
     <!-- Spinner End -->
@@ -46,8 +154,10 @@
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                    <a class="text-body px-2" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789</a>
-                    <a class="text-body px-2" href="mailto:info@example.com"><i class="fa fa-envelope-open text-primary me-2"></i>info@example.com</a>
+                    <a class="text-body px-2" href="tel:+0123456789"><i
+                            class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789</a>
+                    <a class="text-body px-2" href="mailto:info@example.com"><i
+                            class="fa fa-envelope-open text-primary me-2"></i>info@example.com</a>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
@@ -68,7 +178,8 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn"
+        data-wow-delay="0.1s">
         <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="text-primary m-0"><img class="me-3" src="img/icons/icon-1.png" alt="Icon">Arkitektur</h1>
         </a>
@@ -88,7 +199,6 @@
                         <a href="team.html" class="dropdown-item">Team Members</a>
                         <a href="appointment.html" class="dropdown-item">Appointment</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -125,7 +235,8 @@
                             <img src="img/icons/icon-2.png" alt="Icon">
                         </div>
                         <h3 class="mb-3">Design Approach</h3>
-                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                            diam sed stet.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -134,7 +245,8 @@
                             <img src="img/icons/icon-3.png" alt="Icon">
                         </div>
                         <h3 class="mb-3">Innovative Solutions</h3>
-                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                            diam sed stet.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -143,7 +255,8 @@
                             <img src="img/icons/icon-4.png" alt="Icon">
                         </div>
                         <h3 class="mb-3">Project Management</h3>
-                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
+                        <p class="mb-0">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet
+                            diam sed stet.</p>
                     </div>
                 </div>
             </div>
@@ -152,79 +265,609 @@
     <!-- Facts End -->
 
 
-    <!-- Service Start -->
+    <!-- Service start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h4 class="section-title">Our Services</h4>
-                <h1 class="display-5 mb-4">We Focused On Modern Architecture And Interior Design</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="img/service-1.jpg" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="img/icons/icon-5.png" alt="Icon">
-                            <h3 class="mb-3"> Patient Registration</h3>
-                            <p class="mb-4">Streamline data collection and verification, ensuring accurate records and proper billing.</p>
-                            <a class="btn" href="../v.2/services/PatientRegistration.html"><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
+
+        <div class="slider_center">
+            <div class="service-slider">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h4 class="section-title">Our Services</h4>
+                    <h1 class="display-5 mb-4">Modules of Clinosys Systems (SHASTAM)</h1>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="img/service-2.jpg" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="img/icons/icon-6.png" alt="Icon">
-                            <h3 class="mb-3">3D Animation</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                <div class="row g-4">
+                    <!-- Cart items here -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_1_PatientRegistration.png" alt="Icon">
+                                <h3 class="mb-3">Patient Registration </h3>
+                                <p class="mb-4" style="text-align: justify;">Streamline data collection and
+                                    verification,
+                                    ensuring accurate records and
+                                    proper billing.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_2_Appointment_Scheduling.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">Appointment & Scheduling</h3>
+                                <p class="mb-4" style="text-align: justify;">The module makes it possible to schedule
+                                    patient appointments quickly and
+                                    effectively, guaranteeing that patients are seen right away.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_3_Outpatient_Management.png" alt="Icon">
+                                <h3 class="mb-3">Outpatient Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The dental software eDentra's Outpatient
+                                    Management module was created to manage all facets of outpatient activity.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-3.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_6_Billing.png" alt="Icon">
+                                <h3 class="mb-3">Billing</h3>
+                                <p class="mb-4" style="text-align: justify;">The module offers insurance firms
+                                    paper-based
+                                    and electronic billing services, assuring prompt and accurate processing of claims.
+                                </p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-4.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_7_Discharge_Summary.png" alt="Icon">
+                                <h3 class="mb-3">Discharge Summary</h3>
+                                <p class="mb-4" style="text-align: justify;">The Patient Discharge Report is a document
+                                    that
+                                    can be automatically generated following the end of a hospital stay or a course of
+                                    treatment.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-5.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_5_Laboratory_Management.png" alt="Icon">
+                                <h3 class="mb-3">Laboratory Management</h3>
+                                <p class="mb-4" style="text-align: justify;">Effectively organises laboratory department
+                                    activities, commercial records, exam reports, and patient medical tests.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_8_Radiology_Management.png" alt="Icon">
+                                <h3 class="mb-3">Radiology Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The eDentra Dental Software's Radiology
+                                    Management module effectively manages all radiography services offered by dental
+                                    practises.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_9_Pharmacy_Management.png" alt="Icon">
+                                <h3 class="mb-3">Pharmacy Management</h3>
+                                <p class="mb-4" style="text-align: justify;">Patients' expenses are automatically added
+                                    to
+                                    their billing when they pick up their medications from the pharmacy.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_10_Consultant_Management.png" alt="Icon">
+                                <h3 class="mb-3">Consultant Management</h3>
+                                <p class="mb-4" style="text-align: justify;">Dental Software eDentra's Security
+                                    Management
+                                    module is intended to manage the software's security</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_11_Inventory_Management.png" alt="Icon">
+                                <h3 class="mb-3">Inventory Management</h3>
+                                <p class="mb-4" style="text-align: justify;">Monitoring stock levels and setting reorder
+                                    points to set off warning alarms when inventory levels are low</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_12_Security_Management.png" alt="Icon">
+                                <h3 class="mb-3">Security Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's Security
+                                    Management module is made to deal with software securit</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_13_Medical_Data.png" alt="Icon">
+                                <h3 class="mb-3">Medical Data</h3>
+                                <p class="mb-4" style="text-align: justify;">Dental software eDentra's Medical Data
+                                    module
+                                    keeps track of all the patient's medical data, including intake and output records,
+                                    prescription histories, readings, and more.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_14_TPA_Panels.png" alt="Icon">
+                                <h3 class="mb-3">TPA (Panels)</h3>
+                                <p class="mb-4" style="text-align: justify;">Pre-admission activities are managed via
+                                    the
+                                    hospital management system's TPA (Panels) module</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_15_Reception_Management.png" alt="Icon">
+                                <h3 class="mb-3">Reception Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The Dental Software eDentra's Reception
+                                    Management feature is made to oversee front desk operations</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_16_Web_Portal.png" alt="Icon">
+                                <h3 class="mb-3">
+                                    Web Portal</h3>
+                                <p class="mb-4" style="text-align: justify;">All web portal activities are managed by
+                                    the
+                                    eDentra Dental Software's Web Portal module.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_17_MRD_Management.png" alt="Icon">
+                                <h3 class="mb-3">MRD Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's MRD
+                                    Management
+                                    module keeps complete patient records</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_18_MIS_Reports.png" alt="Icon">
+                                <h3 class="mb-3">MIS Reports</h3>
+                                <p class="mb-4" style="text-align: justify;">The Dental Software eDentra MIS Reports
+                                    module
+                                    creates significant reports for the management, offering crucial information and
+                                    insights</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_19_Analytics_Dashboards.png" alt="Icon">
+                                <h3 class="mb-3">Analytics & Dashboards</h3>
+                                <p class="mb-4" style="text-align: justify;">The Dental Software eDentra MIS Reports
+                                    module
+                                    creates significant reports for the management, offering crucial information and
+                                    insights</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_21_Accounts_Management.png" alt="Icon">
+                                <h3 class="mb-3">Accounts Management
+                                </h3>
+                                <p class="mb-4" style="text-align: justify;">Accounts Management module is used to
+                                    manage
+                                    several financial accounts, such as purchases, expenses, and payments.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4"
+                                    src="img/png-icons/mod1_Icons_22_Mobile_Apps.png" alt="Icon">
+                                <h3 class="mb-3">Mobile Apps</h3>
+                                <p class="mb-4" style="text-align: justify;">mobile applications for the Android and iOS
+                                    operating systems that are geared towards both patients and physicians.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-6.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img style="font-size: 20PX;" class="mb-4" src="img/png-icons/mod1_Icons_23_Tablet.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">Tablet</h3>
+                                <p class="mb-4" style="text-align: justify;">On both Android and iOS Platform, users can
+                                    use
+                                    the Nurse Station feature.</p>
+                                <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_24_Finance_Accounting.png" alt="Icon">
+                                <h3 class="mb-3">Finance & Accounting</h3>
+                                <p class="mb-4" style="text-align: justify;">There are integration possibilities for
+                                    SAP, Tally, and QuickBooks.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_25_Biometric_Device_Interface.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">Biometric Device Interface</h3>
+                                <p class="mb-4" style="text-align: justify;">Dental software eDentra may connect to and
+                                    use a variety of biometric devices that are currently on the market.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_26_Barcode_Scanner_Interface.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">Barcode Scanner Interface</h3>
+                                <p class="mb-4" style="text-align: justify;">A wristband with a barcode and a QR code
+                                    printed on it can be used to identify patients.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_27_QR_Code_Scanner_Interface.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">QR Code Scanner Interface</h3>
+                                <p class="mb-4" style="text-align: justify;">Barcodes and QR codes are used on the
+                                    patient wristband for identification.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_28_RFID_Interface.png" alt="Icon">
+                                <h3 class="mb-3">RFID Interface</h3>
+                                <p class="mb-4" style="text-align: justify;">Dentistry software eDentra offers the
+                                    ability to integrate with commercially available RFID scanners
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_29_Finance_Accounting.png" alt="Icon">
+                                <h3 class="mb-3">Email Integration</h3>
+                                <p class="mb-4" style="text-align: justify;">Dental Software eDentra has the ability to
+                                    link with regularly used email servers.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_30_SMS_Integration.png" alt="Icon">
+                                <h3 class="mb-3">SMS Integration</h3>
+                                <p class="mb-4" style="text-align: justify;">SMS integration allows a dental practice to
+                                    send text messages to patients using commercially available SMS packages.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_32_Web_Camera_Interface.png" alt="Icon">
+                                <h3 class="mb-3">Web Camera Interface</h3>
+                                <p class="mb-4" style="text-align: justify;">SMS integration allows a dental practice to
+                                    send text messages to patients using commercially available SMS packages.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_33_Voice-To-Text_Integration.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">Voice-To-Text Integration</h3>
+                                <p class="mb-4" style="text-align: justify;">Voice-to-text integration in eDentra dental
+                                    software enables the use of commercial voice recognition programs like Dragon.
+                                    <a class="btn" href="./services/PatientRegistration.html"><i
+                                            class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_34_Service_Management.png" alt="Icon">
+                                <h3 class="mb-3">Service Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The Dental Software eDentra module in
+                                    charge of managing service fees in accordance with dental office policies is called
+                                    Service Management.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_35_Ambulance_Management.png" alt="Icon">
+                                <h3 class="mb-3">Ambulance Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's Ambulance
+                                    Management module manages the hospital's and outside vendors' ambulance services.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_36_Blood_Bank_Management.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">
+                                    Blood Bank Management</h3>
+                                <p class="mb-4" style="text-align: justify;">Hospital management system's Blood Bank
+                                    Management module: stock issuance, blood order placement, efficient inventory
+                                    management, improved patient safety.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_38_Feedback_Management.png" alt="Icon">
+                                <h3 class="mb-3">
+                                    Feedback Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's Feedback
+                                    Management module makes it possible to gather patient feedback.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_39_Attendance_Management.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">
+                                    Attendance Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's Attendance
+                                    Management module aids in keeping track of staff members' attendance.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_40_Dietary_Management.png" alt="Icon">
+                                <h3 class="mb-3">
+                                    Dietary Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's
+                                    Nutritional Management module makes it easier to handle the food needs of patients.
+                                </p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_41_Health_Package.png" alt="Icon">
+                                <h3 class="mb-3">
+                                    Health Package</h3>
+                                <p class="mb-4" style="text-align: justify;">The Dental Software eDentra's Health
+                                    Package module enables the bundling of various procedures, examinations, and
+                                    prescriptions.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_42_Nurse_Station.png" alt="Icon">
+                                <h3 class="mb-3">
+                                    Nurse Station</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's Nurse
+                                    Station module enables effective task management and promotes a favourable
+                                    healthcare environment.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_43_Operation_Theatre_Management.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">Operation Theatre Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The hospital management system's Operation
+                                    Theatre Management module makes it possible to keep track of every surgical
+                                    procedure.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_45_Equipment_Maintenance_Management.png"
+                                    alt="Icon">
+                                <h3 class="mb-3">
+                                    Equipment Maintenance Management</h3>
+                                <p class="mb-4" style="text-align: justify;">The Hospital Management System's
+                                    architecture supports the use of different languages. Now, the English, French, and
+                                    Spanish versions are available.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item d-flex position-relative text-center h-100">
+                            <img class="bg-img" src="img/service-1.jpg" alt="">
+                            <div class="service-text p-5">
+                                <img class="mb-4" src="img/png-icons/mod1_Icons_46_Assets_Management.png" alt="Icon">
+                                <h3 class="mb-3">Assets Management</h3>
+                                <p class="mb-4" style="text-align: justify;">By doing this, it is ensured that the
+                                    surgery is well-managed and prepared before it is performed.</p>
+                                <a class="btn" href="./services/PatientRegistration.html"><i
+                                        class="fa fa-plus text-primary me-3"></i>Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="img/service-3.jpg" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="img/icons/icon-7.png" alt="Icon">
-                            <h3 class="mb-3">House Planning</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="img/service-4.jpg" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="img/icons/icon-8.png" alt="Icon">
-                            <h3 class="mb-3">Interior Design</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="img/service-5.jpg" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="img/icons/icon-9.png" alt="Icon">
-                            <h3 class="mb-3">Renovation</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item d-flex position-relative text-center h-100">
-                        <img class="bg-img" src="img/service-6.jpg" alt="">
-                        <div class="service-text p-5">
-                            <img class="mb-4" src="img/icons/icon-10.png" alt="Icon">
-                            <h3 class="mb-3">Construction</h3>
-                            <p class="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                            <a class="btn" href=""><i class="fa fa-plus text-primary me-3"></i>Read More</a>
-                        </div>
-                    </div>
+                <div class="service-slider-controls">
+                    <span class="service_prev-icon">&#10094;</span>
+                    <span class="service_next-icon">&#10095;</span>
                 </div>
             </div>
         </div>
@@ -236,85 +879,117 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h4 class="section-title">Testimonial</h4>
-                <h1 class="display-5 mb-4">Thousands Of Customers Who Trust Us And Our Services</h1>
+                <h2 class="display-5 mb-4" style="font-size:x-large;">LETTER OF GRATTITUDE</h2>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-1.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
+
+                <div class="testimonial-item text-center"
+                    data-dot="<img class='img-fluid' src='img/hospitalImg/LIFEPOINT.jpg' alt=''>">
+
+                    <h3>LIFE POINT HOSPITAL</h3>
+                    <p class="fs-5">For past 3 years we are in cooperation with clinovations systems pvt ltd, we as a
+                        costumer are very satisfied with the service provided by the company. And see a bright future
+                        with the organisation. The implementation team and overall company stick to their ideals and
+                        always set a real and fulfilling promise. They fulfil all their commitments which they commit on
+                        the day of demonstration. We pray that this association grows and see a better future with them.
+                        "Alone we can do so little; to</p>
+                    <span class="text-primary">"Alone we can do so little; together we can do so much."— Helen
+                        Keller</span>
                 </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-2.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
+                <div class="testimonial-item text-center"
+                    data-dot="<img class='img-fluid' src='img/hospitalImg/hospital-3.jpg' alt=''>">
+                    <h3>MURKHE HOSPITAL</h3>
+                    <p class="fs-5">Since last 2 years we are using the software provided by Clinovations systems pvt
+                        ltd. The product is very user friendly and allows us to store and utilise the product with an
+                        ease and great experience. The support system is great and are kind enough to help during odd
+                        hours also. They prioritize their costumers' issues very seriously and are always sticked to
+                        deadlines.</p>
+                    <span class="text-primary">"The only way to do great work is to love what you do." —Steve
+                        Jobs</span>
                 </div>
-                <div class="testimonial-item text-center" data-dot="<img class='img-fluid' src='img/testimonial-3.jpg' alt=''>">
-                    <p class="fs-5">Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                    <h3>Client Name</h3>
-                    <span class="text-primary">Profession</span>
+                <div class="testimonial-item text-center"
+                    data-dot="<img class='img-fluid' src='img/hospitalImg/surgery-1822458_640.jpg' alt=''>">
+                    <h3>SYRABHI HOSPITAL</h3>
+                    <p class="fs-5">From last 4 years we are in co-operation with clinovations systems pvt ltd. Their
+                        management is absolutely costumer friendly and knows the value of a costumer. We can list down
+                        numerous events were the management and the support team have been co-operating with us with
+                        patience. They provide us with great user-friendly database management system with a great
+                        experience of working.</p>
+                    <span class="text-primary">"The future belongs to those who believe in the beauty of their
+                        dreams."—Eleanor Roosevelt</span>
                 </div>
-            </div>      
+                <div style="font-size:20px;" class="testimonial-item text-center"
+                    data-dot="<img class='img-fluid' src='img/hospitalImg/hospital-1802679_640.jpg' alt=''>">
+                    <h3>Hospital Name</h3>
+                    <p class="fs-5" style="font-size: 15px;">From past few years we as a hospital are collaborating with
+                        our great partner Cinovations systems pvt ltd, by utilising their product in our hospital. Their
+                        support system has been always kind to support us on the backend side and resolve all our major
+                        or minor issues in a small duration. Their management has always been great support for us.
+                        Their software modules innovate with change of demand and continuously flourishing world.
+                        I would like to take a chance and thank our beloved clinovations systems management and team and
+                        assure them an ever-longing partnership with us. And pray for a bright future to the
+                        organisation.</p>
+                    <span class="text-primary">"Surround yourself only with people who are going to take you higher."—
+                        Oprah Winfrey</span>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Testimonial End -->
-        
+
+
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
+            <div class="row g-5" style="display: flex;justify-content: space-between;">
+                <div class="col-lg-3 col-md-6" style="text-align: justify;">
                     <h3 class="text-light mb-4">Address</h3>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-body me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>B17,18 Karan Green Kothrud,
+                        Pune. 411058 India.</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Plot No. 2, Jalgaon Road, E/1
+                        Sector, Town Center CIDCO, Aurangabad, Maharashtra. 431001 India.</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91-992-304-8739</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91-940-586-8726</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@clinovationssystems.com</p>
+
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <!-- <div class="col-lg-3 col-md-6">
                     <h3 class="text-light mb-4">Services</h3>
                     <a class="btn btn-link" href="">Architecture</a>
                     <a class="btn btn-link" href="">3D Animation</a>
                     <a class="btn btn-link" href="">House Planning</a>
                     <a class="btn btn-link" href="">Interior Design</a>
                     <a class="btn btn-link" href="">Construction</a>
-                </div>
+                </div> -->
                 <div class="col-lg-3 col-md-6">
                     <h3 class="text-light mb-4">Quick Links</h3>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="home">Home</a>
+                    <a class="btn btn-link" href="about us">About Us</a>
+                    <a class="btn btn-link" href="services">Services</a>
+                    <a class="btn btn-link" href="careers">Careers</a>
+                    <a class="btn btn-link" href="cantact Us">Contact Us</a>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="text-light mb-4">Newsletter</h3>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    <h3 class="text-light mb-4">Follow on socials</h3>
+                    <!-- <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p> -->
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-body me-1"
+                            href="https://www.facebook.com/ClinovationsSystems"><i class="fab fa-facebook-f"></i></a>
+                        <!-- <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-instagram"></i></a> -->
+                        <a class="btn btn-square btn-outline-body me-0"
+                            href="https://www.linkedin.com/company/clinovations-systems/mycompany/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <!-- <a class="btn btn-square btn-outline-body me-1" href=""><i class="fab fa-youtube"></i></a> -->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
+        <div class="container-fluid copyright" style="display: flex;justify-content: center;">
+
+            <p> © 2023 clinosys.com All rights reserved.</p>
+
         </div>
     </div>
     <!-- Footer End -->
@@ -338,6 +1013,59 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var slider = $(".service-slider");
+            var row = slider.find(".row");
+            var items = row.find(".col-lg-4");
+            var itemWidth = items.outerWidth();
+            var visibleItems = Math.floor(slider.width() / itemWidth);
+            var scrollDistance = itemWidth * visibleItems;
+            var totalItems = items.length;
+            var currentPosition = 0;
+
+            function showItems() {
+                row.css("transform", "translateX(-" + currentPosition + "px)");
+            }
+
+            function updateButtons() {
+                $(".service_prev-icon").toggle(currentPosition > 0);
+                $(".service_next-icon").toggle(currentPosition < (totalItems - visibleItems) * itemWidth);
+            }
+
+            $(".service_prev-icon").click(function () {
+                if (currentPosition > 0) {
+                    currentPosition -= scrollDistance;
+                    showItems();
+                    updateButtons();
+                }
+            });
+
+            $(".service_next-icon").click(function () {
+                if (currentPosition < (totalItems - visibleItems) * itemWidth) {
+                    currentPosition += scrollDistance;
+                    showItems();
+                    updateButtons();
+                }
+            });
+
+            // Automatically change the slider after 3 seconds
+            setInterval(function () {
+                if (currentPosition < (totalItems - visibleItems) * itemWidth) {
+                    currentPosition += scrollDistance;
+                } else {
+                    currentPosition = 0;
+                }
+                showItems();
+                updateButtons();
+            }, 5000);
+
+            showItems();
+            updateButtons();
+        });
+
+    </script>
 </body>
 
 </html>
