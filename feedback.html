@@ -1,0 +1,589 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            margin-left: 5px;
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover~label,
+        .rating input:checked~label {
+            color: #f7d731;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #success-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9f7ef;
+            color: #2ecc71;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Feedback Form</h1>
+    <form id="feedback-form" action="#">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating:</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="5 stars">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 stars">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 stars">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 stars">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 star">&#9733;</label>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById("feedback-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var rating = document.querySelector('input[name="rating"]:checked');
+
+            // Perform validation (you can add more validation if needed)
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '' || !rating) {
+                alert("Please fill in all fields and provide a rating");
+                return;
+            }
+
+            // Process the form data (you can replace this with your own code to send the form data to the server)
+            // For demonstration purposes, we're simply logging the form data to the console
+            console.log("Name: " + name);
+            console.log("Email: " + email);
+            console.log("Message: " + message);
+            console.log("Rating: " + rating.value);
+
+            // Reset the form
+            document.getElementById("feedback-form").reset();
+
+            // Show success message
+            var successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
+            successMessage.textContent = "Thank you for your feedback!";
+        });
+    </script>
+    <div id="success-message"></div>
+</body>
+
+</html> -->
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      
+    }
+
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+   
+    }
+
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+      margin-left: 5px;
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .rating label:hover,
+    .rating label:hover ~ label,
+    .rating input:checked ~ label {
+      color: #f7d731;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    div.form-container
+  <h1>Feedback Form</h1>
+  <form id="feedback-form" action="#">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating:</label>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5" title="5 stars">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4" title="4 stars">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3" title="3 stars">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2" title="2 stars">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1" title="1 star">&#9733;</label>
+      </div>
+    </div>
+    <button type="submit">Submit</button>
+ 
+</form>
+
+<script>
+  document.getElementById("feedback-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Get form values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var rating = document.querySelector('input[name="rating"]:checked');
+
+    // Perform validation (you can add more validation if needed)
+    if (name.trim() === '' || email.trim() === '' || message.trim() === '' || !rating) {
+      alert("Please fill in all fields and provide a rating");
+      return;
+    }
+
+    // Process the form data (you can replace this with your own code to send the form data to the server)
+    // For demonstration purposes, we're simply logging the form data to the console
+    // console.log("Name: " + name);
+    // console.log("Email: " + email);
+    // console.log("Message: " + message);
+    // console.log("Rating: " + rating.value);
+
+    // Reset the form
+    document.getElementById("feedback-form").reset();
+
+    // Show success alert
+    alert("Thank you for your feedback!");
+
+  });
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feedback-container {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* flex-direction: column; */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+
+        }
+
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #f3ebeb;
+
+        }
+        input:focus,
+        textarea:focus {
+            border: px solid #00988e;
+
+        }
+
+        .rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: center;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            margin-left: 5px;
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .rating label:hover,
+        .rating label:hover~label,
+        .rating input:checked~label {
+            color: #f7d731;
+        }
+
+        .submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="feedback-container">
+        <form id="feedback-form" action="#">
+            <h1>Feedback Form</h1>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+              
+            <div class="form-group">
+                <label for="improvements">What improvements would you suggest for our website?</label>
+                <textarea id="improvements" name="improvements" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="additional-features">Are there any additional features or services you would like to see
+                    added?</label>
+                <textarea id="additional-features" name="additional-features" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="hear-about">How did you hear about our service?</label>
+                <textarea id="hear-about" name="hear-about" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="user-experience">How would you rate the overall user experience? (scale of 1-5)</label>
+                <input type="number" id="user-experience" name="user-experience" min="1" max="5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recommendation">How likely are you to recommend our service to others? (scale of
+                    1-10)</label>
+                <input type="number" id="recommendation" name="recommendation" min="1" max="10" required>
+            </div>
+            <div class="form-group">
+                <label for="navigate">Did you find the website easy to navigate? (yes/no)</label>
+                <select id="navigate" name="navigate" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="response">How satisfied are you with the response time of our customer support? (scale of
+                    1-5)</label>
+                <input type="number" id="response" name="response" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="helpful">Was the information provided on the website helpful? (yes/no)</label>
+                <select id="helpful" name="helpful" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+         
+            <div class="form-group">
+                <label for="technical-issues">Did you encounter any technical issues while using the website?
+                    (yes/no)</label>
+                <select id="technical-issues" name="technical-issues" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+        
+            <div class="form-group">
+                <label for="feedback-session">Would you be interested in participating in a user feedback session to
+                    help us
+                    improve our service? (yes/no)</label>
+                <select id="feedback-session" name="feedback-session" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" title="5 stars">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" title="4 stars">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" title="3 stars">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" title="2 stars">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" title="1 star">&#9733;</label>
+                </div>
+            </div>
+            <div class="submit-btn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("feedback-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get form values
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var rating = document.querySelector('input[name="rating"]:checked');
+            var recommendation = document.getElementById("recommendation").value;
+            var navigate = document.getElementById("navigate").value;
+            var response = document.getElementById("response").value;
+            var helpful = document.getElementById("helpful").value;
+            var userExperience = document.getElementById("user-experience").value;
+            var improvements = document.getElementById("improvements").value;
+            var technicalIssues = document.getElementById("technical-issues").value;
+            var hearAbout = document.getElementById("hear-about").value;
+            var additionalFeatures = document.getElementById("additional-features").value;
+            var feedbackSession = document.getElementById("feedback-session").value;
+
+            // Perform validation (you can add more validation if needed)
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '' || !rating ||
+                recommendation.trim() === '' || navigate.trim() === '' || response.trim() === '' ||
+                helpful.trim() === '' || userExperience.trim() === '' || improvements.trim() === '' ||
+                technicalIssues.trim() === '' || hearAbout.trim() === '' || additionalFeatures.trim() === '' ||
+                feedbackSession.trim() === '') {
+                alert("Please fill in all fields and provide a rating");
+                return;
+            }
+
+            // console.log("Name: " + name);
+            // console.log("Email: " + email);
+            // console.log("Message: " + message);
+            // console.log("Rating: " + rating.value);
+            // console.log("Likelihood of Recommendation: " + recommendation);
+            // console.log("Website Navigation: " + navigate);
+            // console.log("Customer Support Response: " + response);
+            // console.log("Website Information Helpful: " + helpful);
+            // console.log("User Experience Rating: " + userExperience);
+            // console.log("Website Improvements: " + improvements);
+            // console.log("Technical Issues: " + technicalIssues);
+            // console.log("How Heard About: " + hearAbout);
+            // console.log("Additional Features: " + additionalFeatures);
+            // console.log("Interested in Feedback Session: " + feedbackSession);
+
+            // Clear form fields
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            document.querySelector('input[name="rating"]:checked').checked = false;
+            document.getElementById("recommendation").value = "";
+            document.getElementById("navigate").value = "";
+            document.getElementById("response").value = "";
+            document.getElementById("helpful").value = "";
+            document.getElementById("user-experience").value = "";
+            document.getElementById("improvements").value = "";
+            document.getElementById("technical-issues").value = "";
+            document.getElementById("hear-about").value = "";
+            document.getElementById("additional-features").value = "";
+            document.getElementById("feedback-session").value = "";
+
+
+            alert("Thank you for your feedback!");
+
+
+        });
+    </script>
+</body>
+
+</html>

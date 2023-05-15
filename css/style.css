@@ -1,11 +1,11 @@
 /********** Template CSS **********/
 :root {
-    --primary: #a7a6f2 !important;
+    --primary: #00aeef !important;
     --light: #F8F8F8;
     --dark: #252525;
 }
 .text-primary{
-    color: #a7a6f2 !important;
+    color: #00aeef !important;
 }
 h1,
 h2,
